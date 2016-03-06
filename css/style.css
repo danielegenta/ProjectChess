@@ -1,0 +1,680 @@
+/****************
+******MAIN CSS sheet**
+*****************/
+
+
+/*
+	Chess board
+*/
+#main 
+{
+  width: 100%;
+  text-align: center;
+  min-width: 1024px;
+  min-height: 768px;
+}
+
+.main
+{
+  background-color: #BDBDBD; 
+}
+
+#main-board
+{
+	height: 680px;
+	width: 680px;
+	vertical-align: middle;
+	margin: 0 auto; 	
+}
+
+
+
+.main-board-cell-black
+{
+	height: 12%;
+	width: 12%;
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	background-color: #616161;
+	color: white;
+  vertical-align: middle;
+  margin-top: 0 auto;
+}
+
+.main-board-drag-cell
+{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-board-cell-white
+{
+	height: 12%;
+	width: 12%;
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	background-color: #EEEEEE;
+}
+
+
+/*
+* Intro page name
+*/
+
+.btnStart 
+{
+    display: inline-block;
+      position: relative;
+      width: 120px;
+      height: 32px;
+      border-radius: 2px;
+      font-size: 0.9em;
+      text-align: center;
+      vertical-align: centre;
+      background-color: #4285f4;
+      color: #fff;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+}
+
+.btnStart:active
+{
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  transition-delay: 0s;
+}
+
+.container
+{ 
+  font-family:'Roboto';
+  width:600px; 
+  margin:10% auto;
+  display:block; 
+  background:#FFF;
+  padding:10px 50px 50px;
+  min-height: 300px;
+  vertical-align: middle;
+}
+
+input 				
+{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		
+{ outline:none; }
+
+label 				 
+{
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+input:focus ~ label, input:valid ~ label 		
+{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#4285f4; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+
+#intro-page
+{
+   height: 100%;
+   vertical-align: middle;
+}
+
+
+
+
+/*
+**************Classi legate ai titoli******************
+*/
+/*
+  Titolo e sottotiolo
+*/
+#header
+{
+  width: 100%;
+  text-align: center;
+}
+
+.header-title
+{
+	text-shadow: 0px 1px 1px #4d4d4d;
+	color: #222;
+	font: 80px 'LeagueGothicRegular'; 
+  margin: 0 auto;
+}
+
+.header-title-min
+{
+  text-shadow: 0px 1px 1px #4d4d4d;
+  color: #222;
+  font: 50px 'LeagueGothicRegular'; 
+  margin: 0 auto;
+}
+
+/*
+* Font style
+*/
+#header-subtitle, #footer-info, #intro-page-tip, #intro-page-options-tip, .example-table
+{
+  color: #111;
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 15px;
+  font-weight: 300; 
+  line-height: 32px;
+  margin: 0 auto;
+}
+
+
+
+
+
+/*
+****************FOOTER*****************
+*/
+#footer
+{
+  width: 100%;
+  text-align: center;
+}
+
+#footer-info
+{
+  margin: 0 auto;
+}
+
+/*
+* Switch intro-page-options
+*/
+.Switch {
+  position: relative;
+  display: inline-block;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #ccc;
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.8);
+  height: 18px;
+  padding: 6px 6px 5px 6px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  background: #ececec;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.1), inset 0px 1px 3px 0px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 16px;
+}
+body.IE7 .Switch { width: 78px; }
+.Switch span {
+  display: inline-block;
+  width: 35px;
+}
+.Switch span.On { color: #33d2da; }
+.Switch .Toggle {
+  position: absolute;
+  top: 1px;
+  width: 37px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  background: #fff;
+  background: -moz-linear-gradient(top, #ececec 0%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(top, #ececec 0%, #ffffff 100%);
+  background: -o-linear-gradient(top, #ececec 0%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #ececec 0%, #ffffff 100%);
+  background: linear-gradient(top, #ececec 0%, #ffffff 100%);
+  box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.5);
+  z-index: 999;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+}
+.Switch.On .Toggle { left: 2%; }
+.Switch.Off .Toggle { left: 54%; }
+/* Round Switch */
+.Switch.Round {
+  padding: 0px 20px;
+  border-radius: 40px;
+}
+body.IE7 .Switch.Round { width: 1px; }
+.Switch.Round .Toggle {
+  border-radius: 40px;
+  width: 14px;
+  height: 14px;
+}
+.Switch.Round.Off .Toggle {
+  left: 3%;
+  
+}
+.Switch.Round.On .Toggle { left: 58%; background: #4285f4; }
+.info {
+  font-size: 1.2em;
+  margin-bottom: 4px;
+}
+h3 { text-decoration: underline; }
+pre {
+  text-align: left;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  background: #F1F2F2;
+  border: 1px solid #636363;
+  font-size: 2em;
+  margin-top: -10px;
+  margin-bottom: 6px;
+}
+.syntaxhighlighter table, .syntaxhighlighter .container { font-size: 15px!important; }
+.demo { padding-left: 30px; }
+
+
+/* 
+* Combobox intro-page-option
+*/
+select {
+  background-color:white;
+  background-repeat:no-repeat;
+  background-position: right 10px top 15px;
+  background-size: 16px 16px;
+  padding:12px;
+  width:auto;
+  color: #111;
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 15px;
+  font-weight: 300; 
+  line-height: 32px;
+
+  font-family:arial,tahoma;
+
+  text-align:center;
+    border-radius:3px;
+  -webkit-border-radius:3px;
+  -webkit-appearance: none;
+  border:0;
+  outline:0;
+  -webkit-transition:0.3s ease all;
+     -moz-transition:0.3s ease all;
+      -ms-transition:0.3s ease all;
+       -o-transition:0.3s ease all;
+          transition:0.3s ease all;
+}
+
+#blue 
+{
+  background-color: white;
+}
+
+#blue:hover 
+{
+  background-color:#4285f4;
+  color:white;
+}
+
+/*
+* Game table
+*/
+#main-board-table
+{
+  width: 100%;
+}
+
+#main-board-table-countdown, #main-board-table-moveshistory
+{
+  width: 25%;
+}
+
+#main-board-table-board
+{
+  width: 50%;
+}
+
+
+/*
+************ Tabs both main and info *****************************
+*/
+#main-ul {
+  font-size: 0;
+  position: relative;
+  padding: 0;
+  width: 480px;
+  margin: 0 auto;
+  user-select: none;
+}
+
+#info-ul
+{
+  font-size: 0;
+  position: relative;
+  padding: 0;
+  width: 480px;
+  margin: 0 auto;
+  user-select: none;
+
+}
+
+.main-li, .main-a {
+  display: inline-block;
+  width: 160px;
+  height: 75px;
+  background: #616161;
+  font-size: 16px;
+  text-align: center;
+  line-height: 75px;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+
+  color: #111;
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 15px;
+  font-weight: 500; 
+}
+
+.info-li .info-a
+{
+  display: inline-block;
+  width: 160px;
+  height: 75px;
+  background: #757575;
+  font-size: 16px;
+  text-align: center;
+  line-height: 75px;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+
+  color: #111;
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 15px;
+  font-weight: 500; 
+
+  float: left;
+}
+
+.slider {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: #424242;
+  transition: all 0.5s;
+}
+
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  position: absolute;
+  opacity: 1;
+}
+
+.rippleEffect {
+  -webkit-animation: rippleDrop .6s linear;
+  animation: rippleDrop .6s linear;
+}
+
+@-webkit-keyframes 
+rippleDrop {  100% {
+ -webkit-transform: scale(2);
+ transform: scale(2);
+ opacity: 0;
+}
+}
+
+@keyframes 
+rippleDrop {  100% {
+ -webkit-transform: scale(2);
+ transform: scale(2);
+ opacity: 0;
+}
+}
+
+#tabs-menu
+{
+  width: 100%;
+  background: #616161;
+
+}
+
+#tabs-info-menu
+{
+  width: 100%;
+  background: #424242;
+}
+
+/*
+*************** Who is playing and is color | Main page game, left sidebar ***************
+*/
+#turnTable
+{
+  color: #111;
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 20px;
+  font-weight: 300; 
+  line-height: 32px;
+  text-align: center;
+}
+
+
+#whoisplaying-table-color-support
+{
+  border-radius: 100px; 
+  background-color: white;
+  width: 25px;
+  height:  25px;
+}
+
+#playerTwo-Color
+{
+  background-color: black;
+}
+
+#whoisplaying-table
+{
+  width: 50%;
+}
+
+/*
+**************************** Flat table stats *********************
+*/
+.example-table {
+margin: 10% auto;
+-webkit-font-smoothing: antialiased;
+font-size: 115%;
+width: auto;
+overflow: auto;
+display: block;
+}
+.example-table th {
+background-color: #616161;
+font-weight: normal;
+color: rgb(238, 238, 238);
+padding: 20px 30px;
+text-align: center;
+}
+.example-table td {
+background-color: rgb(238, 238, 238);
+padding: 20px 30px;
+color: rgb(111, 111, 111);
+}
+
+/*
+****************** Graveyard ************************************
+*/
+#graveyards
+{
+   width: 100%;
+}
+#white-graveyard
+{
+  border: 2px solid #EEEEEE;
+  min-height: 200px;
+  width: 400px;
+  overflow: auto;
+}
+
+#black-graveyard
+{
+  border: 2px solid black;
+  min-height: 200px;
+  width: 400px;
+  overflow: auto;
+}
+
+/*
+*********************** Moves history ****************************
+*/
+
+/*Part which can hide*/
+#slider
+{
+  background-color: #424242;
+  color: white;
+
+
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 20px;
+  font-weight: 300; 
+  line-height: 32px;
+  padding-top: 5%;
+  text-align: center;
+  overflow: auto;
+}
+
+#slider p
+{
+  color: #111;
+}
+
+/*Trigger that enable the slider (it's a button)*/
+#trigger
+{
+    position:fixed;
+    top:300px;
+    right: 0px;
+    padding:0px;
+    margin:0px;
+    width: 40px;
+    height:160px;
+    background:#616161;
+    z-index:15;
+    border-radius: 3px 0px 0px 3px;
+}
+
+
+#trigger p
+{
+    color: #black;
+    -moz-transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+}
+
+.rotate {
+    -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
+  }
+
+
+#swgrip{
+   width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    bottom: 100%;
+    left: -5px;
+}
+
+

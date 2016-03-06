@@ -1,0 +1,257 @@
+<html>
+<head>
+    <title>
+        Project Chess
+    </title>
+    <!--Linking to CSS and JS resources-->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!--<link rel="stylesheet" type="text/css"  href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>-->
+    <!--Linking to jQuery and jQuery-UI-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!--Timer plugin-->
+    <script src="js/jquery.countdown360.min.js"></script>
+    <!--History moves plugin-->
+    <script src="js/jquery.slidereveal.min.js"></script>
+</head>
+<body class="main">
+
+<div id="common-page">
+    <div id="header">
+        <div id="header-title" class="header-title" align="center">Project Chess</div>
+        <div id="header-subtitle">Gioco di scacchi sviluppato in: HTML, CSS, JS</div>
+    </div>
+
+    <div id="tabs">
+
+        <div id="tabs-menu">
+            <ul id="main-ul">
+                <li class="main-li"><a class="main-a" href="#tabs-1">Gioco</a></li>
+                <li class="main-li"><a class="main-a" href="#tabs-2">Statistiche</a></li>
+                <li class="main-li"><a class="main-a" href="#tabs-3">Informazioni</a></li>
+                <li class="slider"></li>
+            </ul>
+        </div>
+
+        <div id="tabs-1">
+            <div id="intro-page">
+                <div class="container">
+                    <div id="inro-page-tip" align="center"><strong>Ciao, come vi chiamate?</strong></div>
+                    <br><br><br>
+
+                    <form>
+                        <div class="group">
+                            <input type="text" id="txtNamePlayer1" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Nome giocatore</label>
+                        </div>
+                        <br>
+
+                        <div class="group">
+                            <input type="text" id="txtNamePlayer2" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Nome secondo giocatore</label>
+                        </div>
+                    </form>
+                    <input type="button" value="Inzia la partita" id="btnStart" class="btnStart">
+                </div>
+            </div>
+
+            <div id="intro-page-options">
+                <div class="container">
+                    <div id="intro-page-options-tip" align="center">
+                        <strong>Come preferite giocare?</strong>
+                    </div>
+                    <br><br>
+
+                    <form>
+                        <div>
+                            Rotazione scacchiera:
+                            <input type="checkbox" checked id="switchRotation">
+
+                            <div class="Switch Round">
+                                <div class="Toggle"></div>
+                            </div>
+                            <br><br>
+                            Modalit&agrave di gioco:
+                            <select id="blue">
+                                <option>Senza timer</option>
+                                <option>Timer 1</option>
+                                <option>Timer 2</option>
+                            </select>
+                        </div>
+                    </form>
+                    <br>
+                    <input type="button" value="Inzia la partita" id="btnStartGame" class="btnStart">
+                    <br><br><br>
+
+                    <div id="info-timer">
+                        <i><b>Rotazione scacchiera:</b>Permette una rotazione fisica della scacchiera a ogni turno di
+                            180 gradi.</i>
+                        <br><i><b>Timer 1:</b>Ogni turno dura 60 secondi.</i>
+                        <br><i><b>Timer 2:</b>Ogni turno dura 120 secondi.</i>
+                    </div>
+                </div>
+            </div>
+
+            <div id="game-page">
+                <br> <br>
+
+                <div id="main">
+                    <table id="main-board-table">
+                        <tr>
+                            <td id="main-board-table-countdown">
+                                <div id="main-whoisplaying">
+                                    <div id="whoispalying-table" align="center">
+                                        <table id="turnTable">
+                                            <tr>
+                                                <td id="whoisplaying-table-color">
+                                                    <div id="whoisplaying-table-color-support">
+                                                    </div>
+                                                </td>
+                                                <td id="whoisplaying-table-name">
+                                                    Nome
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="countdown" align="center"></div>
+                            </td>
+                            <td align="center" id="main-board-table-board">
+                                <div id="main-board">
+                                    <div class="ui-resizable-handle ui-resizable-sw" id="swgrip"></div>
+                                </div>
+
+
+                            </td>
+                            <td id="main-board-table-moveshistory" align="right">
+                                <div id='slider'>Storico mosse</div>
+                                <button id='trigger'><p>Storico mosse</p></button>
+                            </td>
+                        </tr>
+                        <table width="100%">
+                            <tr>
+                                <td align="center">
+                                    <div id="black-graveyard">
+
+                                    </div>
+                                </td>
+                                <td align="center">
+                                    <div id="white-graveyard">
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </table>
+
+                </div>
+                <div id="footer">
+                    <div id="footer-info">Sviluppato da: Daniele Genta - Estate 2015</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabs-2">
+            <table class="example-table" align="center">
+                <tbody>
+                <tr>
+                    <th>Giocatore</th>
+                    <th>Colore</th>
+                    <th>Pezzi catturati</th>
+                    <th>Tempo trascorso</th>
+                </tr>
+                <tr>
+                    <td id="playerOne-Name">Player 1</td>
+                    <td id="playerOne-Color"></td>
+                    <td id="playerOne-TotalCapturedPiece">0</td>
+                    <td rowspan="2" id="elapsedTime">
+                        <div id="counter">
+                            <span id="s0">0</span>
+                            <span id="s1">0</span>
+                            <span id="s2">:</span>
+                            <span id="s3">0</span>
+                            <span id="s4">0</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="playerTwo-Name">Player 2</td>
+                    <td id="playerTwo-Color"></td>
+                    <td id="playerOne-TotalCapturedPiece">0</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="tabs-3">
+            <div id="tabs-info">
+                <div id="tabs-info-menu">
+                    <ul id="info-ul">
+                        <li class="info-li"><a class="info-a" href="#tabs-info-howto">Come si gioca?</a></li>
+                        <li class="info-li"><a class="info-a" href="#tabs-info-rules">Regole</a></li>
+                        <li class="info-li"><a class="info-a" href="#tabs-info-credits">Crediti</a></li>
+                    </ul>
+                </div>
+                <div id="tabs-info-howto">
+                    <div class="container">
+                        <strong>
+                            Come si gioca
+                        </strong>
+                        <br>
+                        <br>
+                        Vi sono tre modalit&agrave di gioco relative al <strong>TIMER</strong>: <strong>60
+                        SECONDI</strong> per turno, <strong>120 SECONDI</strong> per turno e turni
+                        <strong>ILLIMITATI</strong>.
+                        <br><br>
+                        Vi sono due modalit&agrave di gioco relative alla <strong>ROTAZIONE</strong> della scacchiera:
+                        ATTIVA e DISATTIVA.
+                        <br><br>
+                        Il gioco NON pu&ograve essere messo in <strong>PAUSA</strong> durante le modalit&agrave di gioco
+                        con timer.
+                        <br><br>
+                        Per iniziare una partita &egrave necessario inserire i nomi dei due giocatori e selezionare le
+                        opzioni di gioco.
+                    </div>
+                </div>
+                <div id="tabs-info-rules">
+                    <div class="container">
+                        <strong>
+                            Regole
+                        </strong>
+                        <br>
+                        <br>
+                        <strong>
+                            Vittoria
+                        </strong>
+                        <br><br>
+                        Il gioco finisce se: uno dei RE VIENE CATTURATO, viene effettuato uno SCACCO MATTO, un giocatore
+                        SI ARRENDE.
+                    </div>
+                </div>
+                <div id="tabs-info-credits">
+                    <div class="container">
+                        <strong>
+                            Crediti
+                        </strong>
+                        <br><br>
+                        Gioco sviluppato interamente da <strong> Daniele Genta </strong>.
+                        <br><br>
+                        Sono stati utilizzati plugin presenti in internet per il <strong>TIMER</strong> e lo <strong>STORICO
+                        MOSSSE</strong>.
+                        <br><br>
+                        Le icone per i pezzi sono immagini presenti in rete.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
